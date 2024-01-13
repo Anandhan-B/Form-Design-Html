@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <form action="" method="post">
+        <div class="container">
+
+            <div class="nav-bar">
+                <div class="nav-title" id="nav-title">Untitled Form</div>
+            </div>
+            <div class="title-bar">
+                <div class="title">
+                    <input type="text" name="title" id="title" value="Untitled Form" required onchange="update()">
+                </div>
+            </div>
+            <div class="q-container" id="q-container">
+                <div class="add" id="add"><abbr title="Add Question"><i class="fa-solid fa-plus"></i></abbr></div>
+                <div class="q-bar">
+                    <div class="q-section">
+                        <div class="q">
+                            <textarea name="q-box" required placeholder="Question" class="q-box" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="q-type">
+                            <select id="q-types" class="q-types" name="q-types" required onchange="choice()">
+                                <option value="" hidden>Select question type</option>
+                                <option value="option1">Single Choice</option>
+                                <option value="option2">Checkbox</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="ans-section">
+                        <div class="choices" id="choices">
+                            <div class="choice-row">
+                                <div class="choice-inputs">
+                                  <input class="input-icon" type="radio" disabled>
+                                </div>
+                                <div class="choice-inputs">
+                                  <input type="text" value="Option">
+                                </div>
+                                <div class="choice-inputs">
+                                  <input type="number" placeholder="Mark" required>
+                                </div>
+                                <div class="add-choice" id="add-choice"><abbr title="Add Choice"><i class="fa-solid fa-plus"></i></abbr></div>
+
+                              </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+            <div class="create">
+                <input type="submit" value="Create">
+            </div>
+
+        </div>
+    </form>
+
+</body>
+
+</html>
