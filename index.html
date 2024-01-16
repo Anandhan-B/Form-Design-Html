@@ -26,39 +26,53 @@
             </div>
             <div class="q-container" id="q-container">
                 <div class="add" id="add"><abbr title="Add Question"><i class="fa-solid fa-plus"></i></abbr></div>
-                <div class="q-bar">
+                <div class="q-bar" id="q-bar-1">
                     <div class="q-section">
                         <div class="q">
-                            <textarea name="q-box" required placeholder="Question" class="q-box" cols="30" rows="10"></textarea>
+                            <textarea name="q-box-1" id="q-box-1" required placeholder="Question" class="q-box" cols="30" rows="10"></textarea>
                         </div>
                         <div class="q-type">
-                            <select id="q-types" class="q-types" name="q-types" required onchange="choice()">
-                                <option value="" hidden>Select question type</option>
-                                <option value="option1">Single Choice</option>
-                                <option value="option2">Checkbox</option>
+                            <select id="q-types-1" class="q-types" name="q-types-1" required onchange="">
+                                <option value="radio">Single Choice</option>
+                                <option value="checkbox">Checkbox</option>
                             </select>
+                        </div>
+                        <div class="total-mark">
+                            <label for="mark"> Total Mark : 
+                            <input class="total" id="mark-1" name="mark-1" type="number" required>
+                        </label>
                         </div>
                     </div>
                     <div class="ans-section">
-                        <div class="choices" id="choices">
-                            <div class="choice-row">
+                        <div class="choices" id="choices-1">
+                            <div id="choice-row-1" class="choice-row">
                                 <div class="choice-inputs">
                                   <input class="input-icon" type="radio" disabled>
                                 </div>
                                 <div class="choice-inputs">
-                                  <input type="text" value="Option">
+                                  <input name="option-1" id="option-1" type="text" value="Option">
+                                </div>
+                                
+                                <div class="choice-inputs">
+                                  <input type="number" id="mark-1" name="mark-1" placeholder="Mark" required>
                                 </div>
                                 <div class="choice-inputs">
-                                  <input type="number" placeholder="Mark" required>
+                                    <label for="">
+                                  <input name="ans-1" id="ans-1" type="checkbox"> Ans
+                                </label>
                                 </div>
-                                <div class="add-choice" id="add-choice"><abbr title="Add Choice"><i class="fa-solid fa-plus"></i></abbr></div>
+                                <div class="add-choice" id="add-choice-1"><abbr title="Add Choice"><i class="fa-solid fa-plus"></i></abbr></div>
 
                               </div>
+                              
                             
                         </div>
                     </div>
                     
                 </div>
+                <div class="current-total-container">
+                    <div class="current-total">Total: <span class="c-total" id="current-total-1" name="current-total-1" for="current-total"></span></div> 
+                  </div>
 
             </div>
             <div class="create">
