@@ -13,11 +13,11 @@
 </head>
 
 <body>
-    <form action="" method="post">
+    <form action="" id="form" method="post">
         <div class="container">
 
             <div class="nav-bar">
-                <div class="nav-title" id="nav-title">Untitled Form</div>
+                <div class="nav-title" id="nav-title">Untitled Form</div>  
             </div>
             <div class="title-bar">
                 <div class="title">
@@ -41,7 +41,7 @@
                         <div class="total-mark">
                             <label for="t-mark-1"> Total Mark :
                                 <input class="total" id="t-mark-1" name="t-mark-1"
-                                    onkeydown="return keyCheck(event.key)" type="number" required>
+                                    onkeydown="return keyCheck(event.key)" type="number" min="0" required>
                             </label>
                         </div>
                     </div>
@@ -49,16 +49,17 @@
                         <div class="choices" id="choices-1">
                             <div id="choice-row-1-1" class="choice-row">
                                 <div class="choice-inputs">
-                                    <input class="input-icon" type="radio" disabled>
+                                    <input class="input-icon" name="type-1" type="radio" disabled>
                                 </div>
                                 <div class="choice-inputs">
                                     <input name="option-1-1" id="option-1-1" type="text" value="Option 1">
                                 </div>
 
                                 <div class="choice-inputs">
-                                    <input class="mark" type="number" id="mark-1-1"
+                                    <input class="mark" type="number" min="0" id="mark-1-1"
                                         onkeydown="return keyCheck(event.key)" name="mark-1-1" placeholder="Mark"
-                                        required>
+                                        >
+                                        <small class="err-message" id="err-mark-1-1">Error Message</small>
                                 </div>
                                 <div class="choice-inputs">
                                     <label for="ans-1-1">
@@ -73,7 +74,7 @@
 
                         </div>
                     </div>
-                    <div class="current-total-container">
+                    <div class="current-total-container" id="current-total-container-1">
                         <div class="err" id="err-1"></div>
                         <div class="current-total">Total: <span class="c-total" id="current-total-1"
                                 name="current-total-1" for="current-total-1"></span></div>
@@ -83,6 +84,7 @@
 
             </div>
             <div class="create">
+                <div id="form-err"></div>
                 <input type="submit" value="Create">
             </div>
 

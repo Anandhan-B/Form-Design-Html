@@ -35,8 +35,9 @@ body {
 }
 
 .add-choice {
-    width: 50px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
     display: grid;
     place-content: center;
     background: rgb(0, 0, 0, .05);
@@ -98,6 +99,10 @@ body::-webkit-scrollbar-thumb {
     font-size: 25px;
     margin: 20px;
     cursor: default;
+    max-width: 500px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .title-bar {
@@ -145,6 +150,9 @@ body::-webkit-scrollbar-thumb {
 .mark {
     display: none;
 }
+.mark::placeholder{
+    font-size: 14pt;
+}
 
 .q-no {
     position: relative;
@@ -162,6 +170,8 @@ body::-webkit-scrollbar-thumb {
     border-bottom: solid rgb(0, 0, 0) 1px;
 
 }
+
+
 
 .q {
     margin: 10px;
@@ -217,6 +227,7 @@ body::-webkit-scrollbar-thumb {
 
 .choices .choice-row {
     display: flex;
+    position: relative;
     align-items: center;
     margin-bottom: 25px;
     gap: 25px;
@@ -226,16 +237,18 @@ body::-webkit-scrollbar-thumb {
     border: none;
     outline: none;
     padding: 10px;
-    font-size: 14pt;
+    font-size: 13pt;
     background: rgb(0, 0, 0, .05);
     border-bottom: solid rgb(0, 0, 0, .2) 1px;
 }
 
 .choices input:focus {
 
-    border-bottom: solid rgb(0, 0, 0) 1px;
+    border-bottom: solid rgb(0, 0, 0) 1px ;
 
 }
+
+
 
 .create {
     width: 66vw;
@@ -249,7 +262,7 @@ body::-webkit-scrollbar-thumb {
     width: 100px;
     height: 40px;
     font-size: 14pt;
-    background: white;
+    background: #fff;
     border-radius: 5px;
     margin-bottom: 15px;
     margin-top: 20px;
@@ -257,8 +270,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .create input[type="submit"]:hover {
-    background: rgb(115, 235, 115);
-    border: solid green 2px;
+    background: rgb(235, 235, 235);
+    transition: .2s;
 }
 
 .total-mark {
@@ -278,7 +291,8 @@ body::-webkit-scrollbar-thumb {
 
 .current-total-container {
     width: 100%;
-    display: flex;
+    margin-top: -20px;
+    display: none;
     justify-content: space-between;
 
 }
@@ -295,4 +309,25 @@ body::-webkit-scrollbar-thumb {
 .c-total {
     width: max-content;
     font-size: 14pt;
+}
+
+.err-message{
+    font-size: 8pt;
+    color: red;
+    position: absolute;
+    top: 45px;
+    left: 310px;
+    display: none;
+}
+#form-err{
+    color: red;
+    margin: 20px;
+    display: grid;
+    place-content: center;
+    display: none;
+}
+@media screen and (max-width: 767px){
+    .q-box{
+        width: 300px;
+    }
 }
