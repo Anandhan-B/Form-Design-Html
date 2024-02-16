@@ -9,7 +9,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.tiny.cloud/1/quo4srp08e1fro24jz5pu3g924ixbygjeh0s7syiilg2svb0/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="script.js"></script>
+    <script>
+        tinymce.init({
+  selector: '.nav-title',
+  menubar: false,
+  inline: true,
+  plugins: [
+    'link', 'lists', 'powerpaste',
+    'autolink', 'tinymcespellchecker'
+  ],
+  toolbar: [
+    'undo redo | bold italic underline | fontfamily fontsize',
+    'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent'
+  ],
+  valid_elements: 'p[style],strong,em,span[style],a[href],ul,ol,li',
+  valid_styles: {
+    '*': 'font-size,font-family,color,text-decoration,text-align'
+  },
+  powerpaste_word_import: 'clean',
+  powerpaste_html_import: 'clean',
+})
+    </script>
 
 </head>
 
