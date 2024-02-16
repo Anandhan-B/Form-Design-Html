@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(110deg,#a4d3b0,green) no-repeat;
+    min-height: 100dvh;
+}
+header{
+    width: 100dvh;
+    height: 40px;
+}
+.table{
+    max-width: 70%;
+    margin: auto;
+    background: rgb(255, 255, 255);
+}
+.today h1{
+    text-align: center;
+}
+.view{
+    max-width: 50px !important;
+}

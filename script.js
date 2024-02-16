@@ -1,5 +1,5 @@
 
-const bannedKeys = ['e', 'E', '+','-']
+const bannedKeys = ['e', 'E', '+', '-']
 function keyCheck(key) {
   return !bannedKeys.includes(key)
 }
@@ -61,7 +61,7 @@ $(document).ready(function () {
       </div>
       <div class="current-total-container" id="current-total-container-${i}">
           <div class="err" id="err-${i}"></div>
-          <div class="current-total">Total: <span class="c-total" id="current-total-${i}" name="current-total-${i}" for="current-total-${i}"></span></div> 
+          <div class="current-total">Total: <span class="c-total" id="current-total-${i}"></span></div>
         </div>
   </div>`);
 
@@ -255,73 +255,73 @@ $(document).ready(function () {
 
   // Submit
   $(`#form`).submit(function (e) {
-        e.preventDefault();
-        let isError = false
-        const title = $(`#title`).val()
-        const qBars = []
+    e.preventDefault();
+    let isError = false
+    const title = $(`#title`).val()
+    const questions = []
 
-        $(`.q-bar`).each(function (i) {
-            let q={}
-            let n=i+1
-            q['question'] = $(`#q-box-${n}`).val()
-            if(q['question'].trim() === '') isError = true
-            q['type'] = $(`#q-types-${n}`).val()
-            if(q['type'].trim() === 'checkbox')
-            { 
-              if(checkTotal(n)) isError = true
-            }
-            q['totalMark'] = parseInt($(`#t-mark-${n}`).val()) || 0 
-            //console.log(q);
-            let choices = []
-            $(`#choices-${n}`).children(".choice-row").each(function (i) {
-              let row=i+1
-              let choice = {}
-              choice['choice'] = $(`#option-${n}-${row}`).val();
-              if(choice['choice'].trim() === '') isError = true
-              choice['mark'] = parseInt($(`#mark-${n}-${row}`).val()) || 0;
-              choice['ans'] = $(`#ans-${n}-${row}`).prop('checked');
-              //console.log(choice);
-              choices.push(choice)
-              
-              if(q['type'].trim() === 'radio'){
-                if(checkMax(n,row)) isError = true
-              }
-            })
-            q['choices'] = choices
-            qBars.push(q)
-        })
+    $(`.q-bar`).each(function (i) {
+      let q = {}
+      let n = i + 1
+      q['question'] = $(`#q-box-${n}`).val()
+      if (q['question'].trim() === '') isError = true
+      q['type'] = $(`#q-types-${n}`).val()
+      if (q['type'].trim() === 'checkbox') {
+        if (checkTotal(n)) isError = true
+      }
+      q['totalMark'] = parseInt($(`#t-mark-${n}`).val()) || 0
+      //console.log(q);
+      let choices = []
+      $(`#choices-${n}`).children(".choice-row").each(function (i) {
+        let row = i + 1
+        let choice = {}
+        choice['choice'] = $(`#option-${n}-${row}`).val();
+        if (choice['choice'].trim() === '') isError = true
+        choice['mark'] = parseInt($(`#mark-${n}-${row}`).val()) || 0;
+        choice['ans'] = $(`#ans-${n}-${row}`).prop('checked');
+        //console.log(choice);
+        choices.push(choice)
 
-        const finalData  = {
-          "title":title,
-          "questions":qBars
+        if (q['type'].trim() === 'radio') {
+          if (checkMax(n, row)) isError = true
         }
-        //const formDatas = JSON.stringify(data)
-       // console.log(data);
-       if(isError){
-        $(`#form-err`).html("* Please fix errors in the form").show()
-        setTimeout(() => {
-          $(`#form-err`).html("").hide()
-        }, 5000);
-       }
-       else{
-        $(`#form :input`).prop('disabled', true);
+      })
+      q['choices'] = choices
+      questions.push(q)
+    })
 
-        $.ajax({
-            url: '/api/v1/form/new',
-            type: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            data: JSON.stringify(finalData),
-            success: function () {
-              window.location.href ="http://localhost:8080/success"
-            },
-            error: function (xhr, status, error) {
-              console.error('AJAX error:', status, error);
-            }
-          });
-       }
-     
+
+    if (isError) {
+      $(`#form-err`).html("* Please fix errors in the form").show()
+      setTimeout(() => {
+        $(`#form-err`).html("").hide()
+      }, 5000);
+    }
+    else {
+
+      $.ajax({
+        url: '/api/v1/form/new',
+        type: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: JSON.stringify({ title, questions }),
+        success: function () {
+          $(`#form :input`).prop('disabled', true);
+          window.location.href = "http://localhost:8080/success"
+        },
+        error: function (xhr, status, error) {
+          console.error('AJAX error:', status, error);
+          swal.fire({
+            title:"Error",
+            text:error,
+            icon:"error"
+          })
+         
+        }
+      });
+    }
+
   })
 });
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup | Student</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="signup.js"></script>
+    
+</head>
+<body>
+    <main class="container">
+        <form action="" id="form" method="post" class="form ">
+            <h1>Student Signup</h1>
+            <div class="fields">
+                <label for="name" class="label">Name:
+                </label>
+                <input placeholder="Enter Your name" required class="field" id="name" name="name" type="text">
+                <small class="err name-err"></small>
+                <label for="email" class="label">Email:
+                </label>
+                <input placeholder="Enter your email" id="email"  title="Enter valid email" required class="field" name="email" type="email">
+                <small class="err email-err"></small>
+                <label for="name" class="label">Password:
+                </label>
+                <input placeholder="Enter your password" id="password" required class="field" name="text" type="password">
+                <small class="err pass-err"></small>
+                
+                <label for="name" class="label">University:
+                </label>
+                <select class="field" id="university" name="text" required>
+                    <option value="" selected class="option" disabled>select university -- </option>
+                    <option value="university 1" class="option">university 1</option>
+                    <option value="university 2" class="option">university 2</option>
+                    <option value="university 3" class="option">university 3</option>
+                    <option value="university 4" class="option">university 4</option>
+                </select>
+                <button type="submit" id="submit" class="submit">Signup</button>
+
+                <small class="login">Already have an account? <a href="#">login</a></small>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

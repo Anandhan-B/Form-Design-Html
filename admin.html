@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Admin</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="login.js"></script>
+    
+</head>
+<body>
+    <main class="container">
+        <form action="" id="form" class="form ">
+            <h1>Admin Login</h1>
+            <div class="fields">
+                <label for="email" class="label">Email:
+                </label>
+                <input placeholder="Enter your email" id="email" title="Enter valid email"  required class="field" name="email" type="email">
+                <small class="err email-err"></small>
+                <label for="password" class="label">Password:
+                </label>
+                <input placeholder="Enter your password" id="password" required class="field" name="password" type="password">
+                <button type="submit" class="submit">Login</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

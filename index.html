@@ -1,96 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untitled Form</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Form Index</title>
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="script.js"></script>
-
+    <script src="index.js"></script>
 </head>
-
 <body>
-    <form action="" id="form" method="post">
-        <div class="container">
+    <header>
+     
+    </header>
+    <main>
+    <div class="today"><h1> Forms</h1></div>
 
-            <div class="nav-bar">
-                <div class="nav-title" id="nav-title">Untitled Form</div>  
-            </div>
-            <div class="title-bar">
-                <div class="title">
-                    <input type="text" name="title" id="title" value="Untitled Form" required>
-                </div>
-            </div>
-            <div class="q-container" id="q-container">
-                <div class="add" id="add"><abbr title="Add Question"><i class="fa-solid fa-plus"></i></abbr></div>
-                <div class="q-bar" id="q-bar-1">
-                    <div class="q-section">
-                        <div class="q">
-                            <span class="q-no">1</span> <textarea name="q-box-1" id="q-box-1" required
-                                placeholder="Question" class="q-box" cols="30" rows="10"></textarea>
-                        </div>
-                        <div class="q-type">
-                            <select id="q-types-1" class="q-types" name="q-types-1" required>
-                                <option value="radio">Single Choice</option>
-                                <option value="checkbox">Checkbox</option>
-                            </select>
-                        </div>
-                        <div class="total-mark">
-                            <label for="t-mark-1"> Total Mark :
-                                <input class="total" id="t-mark-1" name="t-mark-1"
-                                    onkeydown="return keyCheck(event.key)" type="number" min="0" required>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="ans-section">
-                        <div class="choices" id="choices-1">
-                            <div id="choice-row-1-1" class="choice-row">
-                                <div class="choice-inputs">
-                                    <input class="input-icon" name="type-1" type="radio" disabled>
-                                </div>
-                                <div class="choice-inputs">
-                                    <input name="option-1-1" id="option-1-1" type="text" value="Option 1">
-                                </div>
+    <table class="table today-release">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" class="col-md-1">Id</th>
+            <th scope="col">QuestionSet</th>
+            <th scope="col" class="col-md-2">View</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="t-row">
+            <th class="id" scope="row">1</th>
+            <td class="f-name">Mark</td>
+            <td class="view"><a href="#"><button class="btn btn-success">View</button></a></td>
+          </tr>
+        </tbody>
+      </table>
 
-                                <div class="choice-inputs">
-                                    <input class="mark" type="number" min="0" id="mark-1-1"
-                                        onkeydown="return keyCheck(event.key)" name="mark-1-1" placeholder="Mark"
-                                        >
-                                        <small class="err-message" id="err-mark-1-1">Error Message</small>
-                                </div>
-                                <div class="choice-inputs">
-                                    <label for="ans-1-1">
-                                        <input class="ans-box" name="ans-1-1" id="ans-1-1" type="checkbox"> Ans
-                                    </label>
-                                </div>
-                                <div class="add-choice" id="add-choice-1"><abbr title="Add Choice"><i
-                                            class="fa-solid fa-plus"></i></abbr></div>
+      <div class="today"><h1>Upcoming Forms</h1></div>
 
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <div class="current-total-container" id="current-total-container-1">
-                        <div class="err" id="err-1"></div>
-                        <div class="current-total">Total: <span class="c-total" id="current-total-1"
-                                name="current-total-1" for="current-total-1"></span></div>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="create">
-                <div id="form-err"></div>
-                <input type="submit" value="Create">
-            </div>
-
-        </div>
-    </form>
-
+    <table class="table upcoming-release">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" class="col-md-1">Id</th>
+            <th scope="col">QuestionSet</th>
+            <th scope="col" class="col-md-2">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="t-row">
+            <th class="id" scope="row">1</th>
+            <td class="f-name">Mark</td>
+            <td class="view">12-4-2023</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+         
 </body>
-
 </html>

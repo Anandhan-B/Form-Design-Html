@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&family=Inter&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(110deg,#5fb875,green );
+    font-family: 'Roboto';
+    overflow: hidden;
+    height: 100dvh;
+    display: grid;
+    place-content: center;
+-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.err{
+    color: red;
+    font-size: .7rem;
+}
+.container{
+    width:400px;
+    background: white;
+    border-radius:5px;
+}
+.form{
+    height: 100%;
+    padding: 10px 0 10px 0;
+}
+
+.container h1{
+    text-align: center;
+    font-size: 1.6rem;
+    letter-spacing: 1.5px;
+    margin:10px 0 0 0;
+}
+.fields{
+    margin: 20px 0 0 0;
+    padding: 0 15px 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.label{
+   display: block;
+   font-size: 1.2rem;
+
+}
+.field{
+    width: 100%;
+    border: solid grey 1px;
+    height: 35px;
+    outline: none;
+    font-size: 1.1rem;
+    padding: 0 1% 0 1%;
+}
+.field::placeholder{
+    padding: 2%;
+    font-size: .9rem;
+}
+.field::selection{
+    background: green;
+    color: white;
+}
+.field:focus{
+    border: solid #333 2px;
+}
+.radio-field{
+    border: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: .8rem;
+    height: 20px;
+    cursor: default;
+    padding: 0;
+}
+.submit{
+    height: 40px;
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Roboto';
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 3% 0;
+}
+
+.login {
+    font-size: .9rem;
+}
