@@ -292,10 +292,11 @@ $(document).ready(function () {
 
 
     if (isError) {
-      $(`#form-err`).html("* Please fix errors in the form").show()
-      setTimeout(() => {
-        $(`#form-err`).html("").hide()
-      }, 5000);
+      swal.fire({
+        title:"Error",
+        text:"Please fix errors in the form",
+        icon:"error"
+      })
     }
     else {
 
